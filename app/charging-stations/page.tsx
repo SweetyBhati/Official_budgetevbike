@@ -316,6 +316,50 @@ export default function ChargingStationsPage() {
 
                 </div>
             </div>
+            <footer className="bg-[#0b0b0b] border-t border-neutral-900/60 text-neutral-400 font-sans w-full pt-16 pb-12 mt-12 relative z-20">
+                <div className="max-w-7xl mx-auto px-8">
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+
+                        <div className="md:col-span-4 flex flex-col gap-4">
+                            <span className="text-[#79b947] text-2xl font-black tracking-tighter">EV.BIKE</span>
+                            <p className="text-xs text-neutral-500 leading-relaxed max-w-xs">
+                                India's most trusted platform for finding, comparing, and analyzing electric vehicles within your budget.
+                            </p>
+                        </div>
+
+                        <div className="md:col-span-2 md:col-start-6 flex flex-col gap-2.5">
+                            <h3 className="text-[11px] font-bold uppercase tracking-widest text-neutral-300 mb-1 font-mono">// QUICK LINKS</h3>
+                            <a href="#" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">New Bikes</a>
+                            <a href="#" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Comparison</a>
+                            <a href="#" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Brands</a>
+                            <a href="#" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">EV Calculator</a>
+                            <a href="#" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Reviews</a>
+                            <a href="#" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Charging Stations</a>
+                        </div>
+
+                        <div className="md:col-span-2 flex flex-col gap-2.5">
+                            <h3 className="text-[11px] font-bold uppercase tracking-widest text-neutral-300 mb-1 font-mono">// POPULAR BRANDS</h3>
+                            <a href="#" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Revolt Motors</a>
+                            <a href="#" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Matter Energy</a>
+                            <a href="#" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Oben Electric</a>
+                            <a href="#" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Tork Motors</a>
+                        </div>
+
+                        <div className="md:col-span-3 flex flex-col gap-2.5">
+                            <h3 className="text-[11px] font-bold uppercase tracking-widest text-neutral-300 mb-1 font-mono">// CONTACT SUPPORT</h3>
+                            <p className="text-xs text-neutral-200 font-medium tracking-wide">+91 63505-71635</p>
+                            <a href="mailto:info@evbike.com" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">info@evbike.com</a>
+                        </div>
+
+                    </div>
+
+                    <div className="border-t border-neutral-900/40 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] tracking-wider text-neutral-600 uppercase font-mono">
+                        <p>© 2026 EV.BIKE MATRIX MEDIA. ALL RIGHTS RESERVED.</p>
+                        <span className="text-[9px] text-neutral-700 font-sans tracking-normal lowercase italic mt-2 md:mt-0">made for EV revolution</span>
+                    </div>
+                </div>
+            </footer>
         </div>
+
     );
 }    
