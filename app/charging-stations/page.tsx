@@ -195,7 +195,7 @@ export default function ChargingStationsPage() {
                         </a>
 
                         {/* Navigation Links */}
-                        <nav className="hidden md:flex items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em]">
+                        <nav className="hidden md:flex items-center gap-6 text-xs font-bold uppercase tracking-[0.15em]">
                             <a href="/" className="text-neutral-400 hover:text-white transition-colors">Home</a>
                             <a href="/compare" className="text-neutral-400 hover:text-white transition-colors">Comparison</a>
                             <a href="/brands" className="text-neutral-400 hover:text-white transition-colors">Brands</a>
@@ -376,9 +376,9 @@ export default function ChargingStationsPage() {
                         <div className="md:col-span-2 md:col-start-6 flex flex-col gap-2.5">
                             <h3 className="text-[11px] font-bold uppercase tracking-widest text-neutral-300 mb-1 font-mono">// QUICK LINKS</h3>
                             <a href="/" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Home</a>
-                            <a href="/comparison" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Comparison</a>
+                            <a href="/compare" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Comparison</a>
                             <a href="/brands" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Brands</a>
-                            <a href="/ev-calculator" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">EV Calculator</a>
+                            <a href="/calculator" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">EV Calculator</a>
                             <a href="/Find-EV" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Find-EV</a>
                             <a href="/charging-stations" className="text-xs text-white font-medium transition-colors w-fit border-b border-[#79b947]/30 pb-0.5">Charging Stations</a>
                         </div>

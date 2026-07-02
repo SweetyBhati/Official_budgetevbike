@@ -93,7 +93,7 @@ export default function BrandsPage() {
               ev.<span className="text-[#79b947]">bike</span>
             </span>
           </a>
-          <nav className="hidden md:flex items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em]">
+          <nav className="hidden md:flex items-center gap-6 text-xs font-bold uppercase tracking-[0.15em]">
             <a href="/" className="text-neutral-400 hover:text-white transition-colors">Home</a>
             <a href="/compare" className="text-neutral-400 hover:text-white transition-colors">Comparison</a>
             <a href="/brands" className="text-white border-b border-white/40 pb-0.5">Brands</a>

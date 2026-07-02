@@ -165,9 +165,9 @@ export default function Home() {
               ev.<span className="text-[#79b947]">bike</span>
             </span>
           </div>
-
-          <nav className="hidden md:flex items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">
+          <nav className="hidden md:flex items-center gap-6 text-xs font-bold uppercase tracking-[0.15em]">
             <a href="/" className="text-white border-b border-white/40 pb-0.5">
+
               Home
             </a>
             <a href="/compare" className="hover:text-white transition-colors">
@@ -495,18 +495,28 @@ export default function Home() {
           <div className="relative overflow-hidden bg-gradient-to-r from-[#11181c] to-[#161f25] border border-neutral-900 rounded-[2rem] p-10 md:p-14 text-center shadow-2xl">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[#aaff00]/5 rounded-full blur-[100px] pointer-events-none" />
             <h3 className="relative text-3xl md:text-5xl font-black text-white tracking-tight leading-tight">
-              Ready to Find Your <span className="text-[#aaff00] drop-shadow-[0_0_15px_rgba(170,255,0,0.25)]">Perfect EV?</span>
+              Ready to Find Your <span className="text-[#aaff00] drop-shadow-[0_0_15px_rgba(170,255,0,0.25)]">Perfect EV Bike?</span>
             </h3>
             <p className="relative mt-4 text-neutral-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-              Compare models, find charging networks, and see fuel cost savings instantly. No commitment, just pure electric data.
+              Compare models, find charging networks, and see fuel cost savings instantly. No commitment, just pure electric bike data.
             </p>
+            {/* Buttons Container */}
             <div className="relative mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="w-full sm:w-auto bg-[#aaff00] hover:bg-[#c2ff33] text-[#0a0f12] font-extrabold px-10 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-sm uppercase tracking-wider shadow-lg">
-                Explore Cars
-              </button>
-              <button className="w-full sm:w-auto bg-neutral-900/50 hover:bg-neutral-900 text-white border border-neutral-800 hover:border-neutral-700 font-bold px-10 py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-sm uppercase tracking-wider backdrop-blur-sm">
-                Compare EVs
-              </button>
+
+              {/* Explore Bikes Link -> Links to Find-EV */}
+              <a href="/Find-EV" className="w-full sm:w-auto">
+                <button className="w-full bg-[#aaff00] hover:bg-[#c2ff33] text-[#0a0f12] font-extrabold px-10 py-4 rounded-lg uppercase tracking-wider text-sm transition-all">
+                  Explore Bikes
+                </button>
+              </a>
+
+              {/* Compare Bikes Link -> Links to compare */}
+              <a href="/compare" className="w-full sm:w-auto">
+                <button className="w-full bg-neutral-900/50 hover:bg-neutral-900 text-white border border-neutral-700 font-extrabold px-10 py-4 rounded-lg uppercase tracking-wider text-sm transition-all">
+                  Compare Bikes
+                </button>
+              </a>
+
             </div>
           </div>
         </div>
