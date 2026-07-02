@@ -182,26 +182,35 @@ export default function ChargingStationsPage() {
         <div className="min-h-screen bg-[#0d0d0d] text-white font-sans antialiased flex flex-col justify-between">
             <div className="w-full flex flex-col flex-1">
 
-                {/* Navbar */}
-                <nav className="flex justify-between items-center px-8 py-4 border-b border-neutral-900 bg-[#0d0d0d]">
-                    <div className="flex items-center gap-2">
-                        <span className="text-[#79b947] text-2xl font-black tracking-tighter">⚡ EV.BIKE</span>
+                {/* Header */}
+                <header className="sticky top-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800 text-white w-full">
+                    <div className="max-w-[1400px] mx-auto px-6 h-24 flex items-center justify-between">
+
+                        {/* Logo Section */}
+                        <a href="/" className="flex items-center gap-3 cursor-pointer">
+                            <img src="/logo.png" alt="ev.BIKE Logo" className="h-9 w-auto object-contain" />
+                            <span className="text-xl font-black tracking-tighter uppercase">
+                                ev.<span className="text-[#79b947]">bike</span>
+                            </span>
+                        </a>
+
+                        {/* Navigation Links */}
+                        <nav className="hidden md:flex items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em]">
+                            <a href="/" className="text-neutral-400 hover:text-white transition-colors">Home</a>
+                            <a href="/compare" className="text-neutral-400 hover:text-white transition-colors">Comparison</a>
+                            <a href="/brands" className="text-neutral-400 hover:text-white transition-colors">Brands</a>
+                            <a href="/calculator" className="text-neutral-400 hover:text-white transition-colors">EV Calculator</a>
+                            <a href="/Find-EV" className="text-neutral-400 hover:text-white transition-colors">Find-EV</a>
+                            <a href="/charging-stations" className="text-white border-b border-white/40 pb-0.5">Charging Stations</a>
+                        </nav>
+
+                        {/* Get Started Button */}
+                        <a href="/Find-EV" className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-all text-center">
+                            Get Started
+                        </a>
+
                     </div>
-                    <div className="hidden md:flex items-center gap-6 text-xs font-bold tracking-wider text-neutral-400 uppercase">
-                        <a href="/" className="hover:text-white transition-colors">Home</a>
-                        <a href="/compare" className="hover:text-white transition-colors">Comparison</a>
-                        <a href="/brands" className="hover:text-white transition-colors">Brands</a>
-                        <a href="/calculator" className="hover:text-white transition-colors text-[#79b947]">EV Calculator</a>
-                        <a href="/reviews" className="hover:text-white transition-colors">Reviews</a>
-                        <a href="/charging-stations" className="text-neutral-400 hover:text-white transition-colors">Charging Stations</a>
-                    </div>
-                    <a
-                        href="/Find-EV"
-                        className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-all text-center inline-block"
-                    >
-                        Get Started
-                    </a>
-                </nav>
+                </header>
 
                 <div className="p-6 max-w-7xl mx-auto w-full flex-1 flex flex-col">
                     {/* Controls Bar */}
@@ -366,11 +375,11 @@ export default function ChargingStationsPage() {
                         {/* QUICK LINKS - Linked Perfectly */}
                         <div className="md:col-span-2 md:col-start-6 flex flex-col gap-2.5">
                             <h3 className="text-[11px] font-bold uppercase tracking-widest text-neutral-300 mb-1 font-mono">// QUICK LINKS</h3>
-                            <a href="/new-bikes" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">New Bikes</a>
+                            <a href="/" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Home</a>
                             <a href="/comparison" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Comparison</a>
                             <a href="/brands" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Brands</a>
                             <a href="/ev-calculator" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">EV Calculator</a>
-                            <a href="/reviews" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Reviews</a>
+                            <a href="/Find-EV" className="text-xs text-neutral-500 hover:text-white transition-colors w-fit">Find-EV</a>
                             <a href="/charging-stations" className="text-xs text-white font-medium transition-colors w-fit border-b border-[#79b947]/30 pb-0.5">Charging Stations</a>
                         </div>
 

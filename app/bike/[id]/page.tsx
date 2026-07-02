@@ -247,10 +247,23 @@ export default function BikeDetailPage({ params }: { params: Promise<{ id: strin
                                         <img
                                             src={`https://bwneyzbsohxwlgdludby.supabase.co/storage/v1/object/public/bikes/${sId}.png`}
                                             className="max-h-[100px] object-contain"
-                                            alt={sb['Model Name']}
-                                            onError={(e) => { e.currentTarget.src = `https://bwneyzbsohxwlgdludby.supabase.co/storage/v1/object/public/bikes/1.png`; }}
+                                            alt={`${sb['Brand / OEM'] || ''} ${sb['Model Name'] || ''}`}
+                                            onError={(e) => {
+                                                const current = e.currentTarget.src;
+                                                // Loop rokne ke liye check lagaya hai
+                                                if (!current.includes('stop=true')) {
+                                                    // Agar main URL kaam na kare toh local standard folder try karega
+                                                    const bName = String(sb['Brand / OEM'] || '').trim();
+                                                    const mName = String(sb['Model Name'] || '').trim();
+                                                    e.currentTarget.src = `/EV_Bikes/${bName}/${mName}.png?stop=true`;
+                                                } else {
+                                                    // Agar dono jagah na mile toh layout kharab hone ke bajay broken icon gayab ho jayega
+                                                    e.currentTarget.style.display = 'none';
+                                                }
+                                            }}
                                         />
                                     </div>
+
                                     <div>
                                         <h3 className="text-sm font-bold text-white truncate">{sb['Brand / OEM'] || sb['Brand/OEM']} {sb['Model Name']}</h3>
                                         <p className="text-[11px] font-mono text-[#79b947] mt-0.5">{sb['Variant Name'] || `${sb['Battery Capacity (kWh)']} kWh`}</p>

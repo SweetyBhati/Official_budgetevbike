@@ -29,11 +29,14 @@ export default function CalculatorPage() {
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100 font-sans antialiased">
       {/* Header */}
+
       <header className="sticky top-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800 text-white">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+
+        <div className="max-w-[1400px] mx-auto px-6 h-24 flex items-center justify-between">
 
           <a href="/" className="flex items-center gap-3 cursor-pointer">
-            <img src="/logo.png" alt="ev.BIKE Logo" className="h-8 w-auto object-contain" />
+            {/* Yahan logo ki height h-8 se badha kar h-9 kar di */}
+            <img src="/logo.png" alt="ev.BIKE Logo" className="h-9 w-auto object-contain" />
             <span className="text-xl font-black tracking-tighter uppercase">
               ev.<span className="text-[#79b947]">bike</span>
             </span>

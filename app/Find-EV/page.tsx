@@ -27,7 +27,7 @@ const EV_BIKE_DATABASE: EVBike[] = [
 
 export default function FindEVPage() {
   // Filters States setup mirroring the reference panel
-  const [maxPrice, setMaxPrice] = useState<number>(2.0); // Default Max slider up to 2 Lakhs
+  const [maxPrice, setMaxPrice] = useState<number>(2.5); // Default Max slider up to 2.5 Lakhs
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [selectedBodyTypes, setSelectedBodyTypes] = useState<string[]>([]);
   const [minRange, setMinRange] = useState<number>(0);
@@ -55,7 +55,7 @@ export default function FindEVPage() {
   };
 
   const handleClearAll = () => {
-    setMaxPrice(2.0);
+    setMaxPrice(2.5);
     setSelectedBrands([]);
     setSelectedBodyTypes([]);
     setMinRange(0);
@@ -86,30 +86,45 @@ export default function FindEVPage() {
   return (
     <div className="min-h-screen bg-[#0d0d0d] text-white font-sans antialiased flex flex-col justify-between">
 
-      {/* Navbar Layout Structure */}
-      <nav className="flex justify-between items-center px-8 py-4 border-b border-neutral-900 bg-[#0d0d0d]">
-        <div className="flex items-center gap-2">
-          <span className="text-[#79b947] text-2xl font-black tracking-tighter">⚡ EV.BIKE</span>
-        </div>
-        <div className="hidden md:flex items-center gap-6 text-xs font-bold tracking-wider text-neutral-400 uppercase">
-          <a href="/" className="hover:text-white transition-colors">Home</a>
-          <a href="/comparison" className="hover:text-white transition-colors">Comparison</a>
-          <a href="/brands" className="hover:text-white transition-colors">Brands</a>
-          <a href="/ev-calculator" className="hover:text-white transition-colors">EV Calculator</a>
-          <a href="/Find-EV" className="hover:text-white transition-colors">Find-EV</a>
-          <a href="/charging-stations" className="hover:text-white transition-colors">Charging Stations</a>
-        </div>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-all">Get Started</button>
-      </nav>
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800 text-white w-full">
+        <div className="max-w-[1400px] mx-auto px-6 h-24 flex items-center justify-between">
 
+          {/* Logo Section */}
+          <a href="/" className="flex items-center gap-3 cursor-pointer">
+            <img src="/logo.png" alt="ev.BIKE Logo" className="h-9 w-auto object-contain" />
+            <span className="text-xl font-black tracking-tighter uppercase">
+              ev.<span className="text-[#79b947]">bike</span>
+            </span>
+          </a>
+
+          {/* Navigation Links */}
+          <nav className="hidden md:flex items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em]">
+            <a href="/" className="text-neutral-400 hover:text-white transition-colors">Home</a>
+            <a href="/compare" className="text-neutral-400 hover:text-white transition-colors">Comparison</a>
+            <a href="/brands" className="text-neutral-400 hover:text-white transition-colors">Brands</a>
+            <a href="/calculator" className="text-neutral-400 hover:text-white transition-colors">EV Calculator</a>
+            <a href="/Find-EV" className="text-white border-b border-white/40 pb-0.5">Find-EV</a>
+            <a href="/charging-stations" className="text-neutral-400 hover:text-white transition-colors">Charging Stations</a>
+          </nav>
+
+          {/* Get Started Button */}
+          <button className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-all">
+            Get Started
+          </button>
+
+        </div>
+      </header>
       {/* Main Structural Framework Body */}
       <div className="max-w-[1400px] mx-auto w-full px-6 py-8 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-        {/* LEFT COLUMN: FILTERS ENGINE PANEL (Mirroring Uploaded Reference Wireframe) */}
+        {/* LEFT COLUMN: FILTERS ENGINE PANEL */}
         <div className="lg:col-span-3 bg-[#111111] border border-neutral-900 rounded-2xl p-5 h-fit sticky top-6">
           <div className="flex justify-between items-center border-b border-neutral-800 pb-4 mb-5">
             <h2 className="text-sm font-black uppercase tracking-wider text-neutral-200">Filters</h2>
-            <button onClick={handleClearAll} className="text-xs font-bold text-red-400 hover:text-red-300 transition-colors">Clear All ({selectedBrands.length + selectedBodyTypes.length})</button>
+            <button onClick={handleClearAll} className="text-xs font-bold text-red-400 hover:text-red-300 transition-colors">
+              Clear All ({selectedBrands.length + selectedBodyTypes.length})
+            </button>
           </div>
 
           {/* 1. Price Range Custom Slider Control */}
@@ -206,7 +221,7 @@ export default function FindEVPage() {
 
         </div>
 
-        {/* RIGHT COLUMN: INTERACTIVE LIVE EV CARDS VIEWPORT GRID GRID PANEL */}
+        {/* RIGHT COLUMN: INTERACTIVE LIVE EV CARDS VIEWPORT GRID PANEL */}
         <div className="lg:col-span-9 flex flex-col gap-6">
 
           {/* Header Subhead Node Descriptor Area */}
@@ -269,12 +284,21 @@ export default function FindEVPage() {
                     </div>
 
                     {/* View Details Interactive Redirection Routing Buttons */}
-                    <a
-                      href={`/brands/${bike.brand.toLowerCase().replace(/ /g, '-')}/${bike.name.toLowerCase().replace(/ /g, '-')}`}
-                      className="block text-center text-xs font-bold bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 hover:border-neutral-700 py-3 rounded-xl transition-all font-mono uppercase tracking-wider"
+                    <button
+                      onClick={() => {
+                        const currentBike = bike as any;
+                        const targetId = currentBike["S.No."] || currentBike.id || currentBike["s_no"];
+
+                        if (targetId) {
+                          window.location.href = `/bike/${targetId}`;
+                        } else {
+                          alert("S.No. Key field mapping clear nahi hai client side par!");
+                        }
+                      }}
+                      className="block w-full text-center text-xs font-bold bg-[#79b947] hover:bg-[#68a33b] text-neutral-950 py-3.5 rounded-xl tracking-wider transition-all uppercase font-mono shadow-lg"
                     >
                       View Full Details
-                    </a>
+                    </button>
                   </div>
 
                 </div>

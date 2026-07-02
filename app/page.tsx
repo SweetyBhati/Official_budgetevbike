@@ -153,12 +153,13 @@ export default function Home() {
 
       {/* 1. Header Component */}
       <header className="sticky top-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-6 h-24 flex items-center justify-between">
+
           <div className="flex items-center gap-3">
             <img
               src="/logo.png"
               alt="ev.BIKE Logo"
-              className="h-8 w-auto object-contain"
+              className="h-9 w-auto object-contain"
             />
             <span className="text-xl font-black tracking-tighter uppercase">
               ev.<span className="text-[#79b947]">bike</span>
